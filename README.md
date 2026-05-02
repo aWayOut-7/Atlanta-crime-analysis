@@ -12,7 +12,16 @@ Visualzing Atlanta neighborhood crime trends using SQL and Python
 ## Dataset
 
 --
-##
+## Tech Stack
 
 --
-##
+## How to Run
+--
+## Key Findings
+--
+## Future Improvements
+- Add an interactive map (Leaflet.js) to visualize incidents by neighborhood
+- Build a simple frontend dashboard
+- Add date range filtering to the API
+- Compare year-over-year crime trends
+- Predictive Analysis
