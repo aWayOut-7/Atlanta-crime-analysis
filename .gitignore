@@ -1,1 +1,3 @@
+# Ignore the database file and CSV files
 *.csv
+*.db
