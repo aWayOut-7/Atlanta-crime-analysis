@@ -26,19 +26,17 @@ with open(csv_path, newline='', encoding='utf-8') as csvfile:
     columns = ', '.join([f'"{col}" TEXT' for col in headers])
     cursor.execute(f'CREATE TABLE IF NOT EXISTS crimes ({columns})') 
     print('--Table Created Successfully.')
+
+    #Read remaining rows and insert into crimes DB
+    for row in reader: 
+        placeholders = ', '.join(['?' for _ in row])
+        cursor.execute(f'INSERT INTO crimes VALUES ({placeholders})', row)
+        
+    #Save (commit) a; omserts tp the database
+    conn.commit()
+    print(f"data loaded successfully")
   
 
 conn.close()
 print ('--CSV file read successfully and Database connection closed.')
 
-#Read remaining rows and insert into crimes DB
-for row in reader: 
-    placeholders = ', '.join(['?' for _ in row])
-    cursor.execute(f'INSET INTO crimes VALUES ({placeholders})', row)
-
-
-
-
-#Save (commit) a; omserts tp the database
-conn.commit()
-print(f"data loaded successfully")
