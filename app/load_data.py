@@ -14,14 +14,14 @@ database_path = os.path.join(base_dir, 'atlanta_crime.db')
 conn = sqlite3.connect(database_path)
 cursor = conn.cursor()
 
-#Open the CSV file and read its contents
-#Print header columns for verification
+#Opens CSV file and read its contents
+#Prints header columns for verification
 with open(csv_path, newline='', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
     headers = next(reader)  # Skip  header row
     print('--Found Columns in CSV:', headers) 
 
-    #Create crime table using headers found in CSV
+    #Assembles crime table using headers found in CSV
     #Create table names 'crimes' if it doesn't exist
     columns = ', '.join([f'"{col}" TEXT' for col in headers])
     cursor.execute(f'CREATE TABLE IF NOT EXISTS crimes ({columns})') 
