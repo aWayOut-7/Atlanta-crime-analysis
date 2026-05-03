@@ -26,10 +26,15 @@ Flask --  serves query results as JSON endpoints
 --
 ## How to Run
 1. Clone the repo
+
 2.Download ... 
+
 3. TBA
+
 4. TBA
+
 5. TBA
+
 --
 ## Project Structure
 atlanta-crime-analysis
