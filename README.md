@@ -37,10 +37,10 @@ data/
 
 
 queries/
-    by_neighborhood.sql
-    by_crime_type.sql
-    by_time_of_day.sql
-    monthly_trends.sql
+│   ├── by_neighborhood.sql
+│   ├── by_crime_type.sql
+│   ├── by_time_of_day.sql
+│   └── monthly_trends.sql
 
 app/
     app.py #Flask API
