@@ -79,3 +79,4 @@ Build a simple frontend dashboard
 Add an interactive map (Leaflet.js) to visualize incidents by neighborhood
 Compare year-over-year crime trends
 Predictive Analysis
+Merge historical crime data (1997–2008, 2009–2020): both datasets excluded due to mismatched column schemas with the primary 2021–2026 dataset. Requires separate tables or data normalization before joining across time periods.
