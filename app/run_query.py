@@ -2,8 +2,7 @@ import sqlite3
 import os
 import sys
 
-
-
+# Define the path to the SQLite database
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 database_path = os.path.join(base_dir, 'atlanta_crime.db')
 
@@ -19,7 +18,7 @@ cursor = conn.cursor()
 
 cursor.execute(query)
 rows = cursor.fetchall()
-
+# Prints each row returned by query
 for row in rows: 
     print(row)
 

@@ -3,10 +3,6 @@ import csv
 import os
 import glob
 
-#Define the path to database and the CSV file
-##DATABASE_PATH = 'database.db'
-##CSV_FILE_PATH = 'OpenDataWebsite_Crime_view_-3942881780502137226.csv'
-
 ###csv_path = os.path.join(base_dir, 'data', 'OpenDataWebsite_Crime_view_-3942881780502137226.csv') 
 ###Hard coded path to CSV, incorrected for deployment, replaced with glob to find any CSV in data folder
 
