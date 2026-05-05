@@ -1,1 +1,0 @@
-SELECT * FROM crimes LIMIT 1; 

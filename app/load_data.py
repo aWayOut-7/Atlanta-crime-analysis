@@ -21,7 +21,7 @@ cursor = conn.cursor()
 #Opens CSV file and read its contents. -- Prints header columns for verification
 for csv_path in csv_files:
     print(f"--Loading:{csv_path} into database...")
-    with open(csv_path, newline='', encoding='utf-8') as csvfile:
+    with open(csv_path, newline='', encoding='utf-8-sig') as csvfile:
         reader = csv.reader(csvfile)
         headers = next(reader)  # Skip  header row
         print('--Found Columns in CSV:', headers) 
