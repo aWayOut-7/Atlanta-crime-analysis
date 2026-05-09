@@ -28,7 +28,7 @@ def neighborhoods():
 
 @app.route('/api/TimeOfDay')
 def time_of_day():
-    return jsonify(run_query('queries/by_TimeOfDay.sql'))
+    return jsonify(run_query('queries/by_ToD.sql'))
 
 @app.route('/api/zones')
 def zones():
