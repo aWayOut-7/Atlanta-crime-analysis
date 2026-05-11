@@ -22,10 +22,18 @@
   </table>
   
   <!-- Script portion is WIP -->
-<!-- <script>
- fetch('http://localhost:5000/api/monthly')
- .then()
-</script> -->
+  <script>
+ fetch('http://localhost:5000/api/neighborhoods')
+  .then(replyFromServer => replyFromServer.json())
+  .then(function(formattedReplyData)){
+      formattedReplyData.forEach(function(TableInsert){
+      const tbody = document.getElementById('Neighborhood-Table-Body');
+// create table row
+
+      }
+      )}
+     
+  </script>
 
 </body>
 

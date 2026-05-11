@@ -38,5 +38,9 @@ def zones():
 def zone_by_time_of_day():
     return jsonify(run_query('queries/zone_by_tod.sql'))
 
+# @app.route('/api/ZoneByTimeofDay')
+# def zone_by_time_of_day():
+#     return jsonify(run_query('queries/zone_by_tod.sql'))
+
 if __name__ == '__main__':
     app.run(debug=True)
