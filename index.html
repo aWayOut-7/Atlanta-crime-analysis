@@ -9,36 +9,55 @@
 <body>
   <h1>Atlanta Crime Analysis</h1>
   <h2>Crimes by Neighborhood</h2>
-  <table id="Neighborhood-Table">
+  <button onclick="fetchData('http://localhost:5000/api/neighborhoods',['NhoodName','nhood_crime_count'])">Neighborhoods</button>
+  <button onclick="fetchData('http://localhost:5000/api/TimeOfDay',['event_watch','incident_count'])">Time Of Day</button>
+  <button onclick="fetchData('http://localhost:5000/api/zones',['Zone_int','crime_count'])">Zones</button>
+  <button onclick="fetchData('http://localhost:5000/api/ZoneByTimeofDay',['Zone_int','event_watch', 'incident_count'])">Zone by Time of Day</button>
+
+  <table id="Data-Table">
     <thead>
       <tr>
         <th>Neighborhood</th>
         <th>Number of Crimes</th>
       </tr>
     </thead>
-    <tbody id ="Neighborhood-Table-Body"> 
+    <tbody id ="Table-Body"> 
         <!-- Table rows will be populated by script -->
     </tbody>
   </table>
   
   <!-- Script portion is WIP -->
-  <script>
- fetch('http://localhost:5000/api/neighborhoods')
+<script> 
+function fetchData(apiUrl, columns) {
+  fetch(apiUrl)
   .then(replyFromServer => replyFromServer.json())
-  .then(function(formattedReplyData)){
+  .then(function(formattedReplyData) {
+      const tbody = document.getElementById('Table-Body');
+      tbody.innerHTML = '';
       formattedReplyData.forEach(function(TableInsert){
-      const tbody = document.getElementById('Neighborhood-Table-Body');
-// create table row
-
+        const trInsert = document.createElement('tr');
+        trInsert.innerHTML = `<td>${TableInsert[columns[0]]}</td><td>${TableInsert[columns[1]]}</td>`
+        tbody.appendChild(trInsert);
       }
       )}
-     
-  </script>
-
+    )
+  }
+// pruned lines below =========
+//  fetch('http://localhost:5000/api/neighborhoods')
+//   .then(replyFromServer => replyFromServer.json())
+//   .then(function(formattedReplyData) {
+//       const tbody = document.getElementById('Neighborhood-Table-Body');
+//       formattedReplyData.forEach(function(TableInsert){
+//         const trInsert = document.createElement('tr');
+//         trInsert.innerHTML = `<td>${TableInsert.NhoodName}</td><td>${TableInsert.nhood_crime_count}</td>`
+//         tbody.appendChild(trInsert);
+//       }
+//       )}
+//     )
+</script>
 </body>
 
 <footer>
-  <p>&copy; 2023 Atlanta Crime Analysis. All rights reserved.</p>
+  <p>&copy; 2026 Atlanta Crime Analysis. All rights reserved.</p>
 </footer>
-
 </html>

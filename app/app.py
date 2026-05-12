@@ -1,9 +1,12 @@
 import sqlite3
 import os
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 #creates Flask app instance
 app = Flask(__name__)
+CORS(app)
+
 
 #path to database, assumes it's in the parent directory of app
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
