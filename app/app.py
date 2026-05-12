@@ -2,6 +2,7 @@ import sqlite3
 import os
 from flask import Flask, jsonify
 from flask_cors import CORS
+from flask import send_from_directory
 
 #creates Flask app instance
 app = Flask(__name__)
@@ -24,6 +25,9 @@ def run_query(sql_file):
 
     return [dict(row) for row in rows]
 
+@app.route('/')
+def index():
+    return send_from_directory('..','index.html')
 
 @app.route('/api/neighborhoods')
 def neighborhoods():
